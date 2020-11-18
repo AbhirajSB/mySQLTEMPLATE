@@ -57,10 +57,51 @@ CREATE TABLE address(
     employee_home varchar(14) PRIMARY KEY
 );
 
+--INSERT DATA IN TABLE EMPLOYEE
+INSERT INTO employee VALUES( 1, "David", "Wallace", 43, "1995-01-26", "M", NULL, NULL);
 
+--INSERT DATA IN TABLE BRANCH
+INSERT INTO branch VALUES("NY", 1, 111);
+INSERT INTO branch VALUES("Scranton", 2, 222);
+
+
+--INSERT DATA IN TABLE EMPLOYEE 
+INSERT INTO employee VALUES(2, "Michael", "Scott",39, "1996-01-26", "M", NULL, 1);
+INSERT INTO employee VALUES(3, "Dwight", "Schrute",35, "1994-01-26", "M", 222, 2);
+INSERT INTO employee VALUES(4, "Jim", "Halpert",28, "1993-01-26", "M",222, 2);
+INSERT INTO employee VALUES(5, "Pam", "Beasley",30, "1991-01-26", "F", 222, 2);
+INSERT INTO employee VALUES(6, "Stanley", "Hudson",59, "1992-01-26", "M", 222, 2);
+INSERT INTO employee VALUES(7, "Phyllis", "Lapin",52, "1995-01-26", "F", 222, 2);
+INSERT INTO employee VALUES(8, "Angela", "Martin",41, "1998-01-26", "F", 222, 2);
+INSERT INTO employee VALUES(9, "Gabe", "Lewis",29, "1990-01-26", "M", 222, 2);
+--UPDATE
+UPDATE employee
+SET branch_id= 111
+WHERE employee_id= 1;
+
+--UPDATE for MS branch id
+UPDATE employee
+SET branch_id= 222
+WHERE employee_id= 2;
+
+--INSERT DATA IN TABLE CLIENTS
+INSERT INTO clients VALUES(100,"Deckert",222);
+INSERT INTO clients VALUES(200,"L.County",222);
+INSERT INTO clients VALUES(300,"Kenny",222);
+INSERT INTO clients VALUES(400,"Stone&Son",222);
+INSERT INTO clients VALUES(500,"Earl",222);
+
+--INSERT DATA IN TABLE EMPLOYEE_SALES
+INSERT INTO employee_sales VALUES(2,222,100,2000);
+INSERT INTO employee_sales VALUES(3,222,200,3000);
+INSERT INTO employee_sales VALUES(5,222,300,50000);
+INSERT INTO employee_sales VALUES(6,222,400,4400);
+INSERT INTO employee_sales VALUES(8,222,500,1234);
 
 select * from employee;
 select * from branch;
+select * from clients;
+select * from employee_sales;
 describe employee;
 DROP table employee;
 drop table branch;
